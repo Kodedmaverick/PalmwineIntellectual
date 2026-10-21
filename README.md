@@ -30,6 +30,12 @@ A hidden honeypot field and a light per-IP limit reduce spam.
 > `onboarding@resend.dev` only delivers to the address you registered with Resend — which is what you want here.
 > To send from your own address later, verify a domain in Resend and update `CONTACT_FROM_EMAIL`.
 
+## Deploy with Nixpacks (Coolify, Railway, etc.)
+`nixpacks.toml` builds the site and runs `server.js`, which serves the pages *and* `/api/contact`.
+1. Push these files so `package.json` sits at the **root** of the repo (or set Base Directory to the folder that holds it).
+2. Add `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` as environment variables in your host.
+3. Set the exposed port to `3000` (or let the host provide `PORT`).
+
 ## Project layout
 ```
 api/contact.js            serverless email endpoint (Vercel)
