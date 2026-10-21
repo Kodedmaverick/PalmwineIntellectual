@@ -1,0 +1,9 @@
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:var(--text-body-md);color:var(--foreground);background:var(--background);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--link);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--text-muted)}
+button,input,select,textarea{font-family:inherit}
+::selection{background:var(--coral-disabled);color:var(--ink-900)}
+.ti-wordmark{font:800 24px/1 var(--font-sans);letter-spacing:-0.04em;color:var(--primary);text-decoration:none;white-space:nowrap}
+.ti-link-legal{color:var(--link-legal)}
