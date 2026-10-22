@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, Badge } from '../components/ds.jsx';
 import CaseLayout from '../components/CaseLayout.jsx';
@@ -13,12 +13,13 @@ export default function PatientJourneys() {
   const advExpanded = adv;
   const advIcon = adv ? 'chevron-up' : 'chevron-down';
   return (
-<CaseLayout current="journeys" toc={TOC} hero={<><section aria-labelledby="cs-title" style={{maxWidth:"1200px",margin:"0 auto",padding:"40px clamp(20px,4vw,48px) 56px",display:"flex",flexDirection:"column",gap:"28px"}}><Link to="/#work" style={{alignSelf:"flex-start",display:"inline-flex",alignItems:"center",gap:"8px",font:"500 14px/1.3 var(--font-sans)",color:"var(--text-muted)",textDecoration:"none",padding:"6px 0"}}><Icon name="arrow-left" size={16} />Selected work</Link>
-<div style={{font:"600 13px/1.3 var(--font-sans)",letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--primary)",paddingTop:"24px"}}>Migranium / Patient Journeys</div>
-<h1 id="cs-title" style={{margin:"0",maxWidth:"980px",font:"600 clamp(40px,6.2vw,76px)/1.03 var(--font-sans)",letterSpacing:"-0.04em",color:"var(--text-strong)",textWrap:"balance"}}>One builder for <span style={{fontFamily:"var(--serif)",fontStyle:"italic",fontWeight:"400",letterSpacing:"-0.01em"}}>complex patient workflows</span>
+<CaseLayout current="journeys" toc={TOC} hero={<><section aria-labelledby="cs-title" style={{maxWidth:"1200px",margin:"0 auto",padding:"40px clamp(20px,4vw,48px) 56px",display:"flex",flexDirection:"column",gap:"28px"}}><Link to="/#work" style={{alignSelf:"flex-start",display:"inline-flex",alignItems:"center",gap:"8px",font:"500 14px/1.3 var(--font-sans)",color:"var(--text-muted)",textDecoration:"none",padding:"6px 0"}} className="h2"><Icon name="arrow-left" size={16} />Selected work</Link>
+<div style={{display:"flex",alignItems:"center",gap:"14px",flexWrap:"wrap",paddingTop:"24px"}}><img src="/assets/logos/migranium.png" alt="Migranium" style={{height:"32px",width:"auto",mixBlendMode:"multiply"}} /><span style={{font:"600 13px/1.3 var(--font-sans)",letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--primary)"}}>Migranium / Patient Journeys</span>
+</div>
+<h1 id="cs-title" style={{margin:"0",maxWidth:"980px",font:"600 clamp(40px,6.2vw,76px)/1.03 var(--font-sans)",letterSpacing:"-0.04em",color:"var(--text-strong)",textWrap:"balance"}}>One builder for <span style={{color:"var(--primary)",letterSpacing:"-0.01em"}}>complex patient workflows</span>
 </h1>
 <p style={{margin:"0",maxWidth:"760px",font:"400 clamp(18px,1.8vw,21px)/1.6 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Two prospective clients needed a way to coordinate care across appointments, tests, forms, and clinical decisions. I defined and prototyped a combined visual builder that made these workflows configurable while keeping the primary experience manageable.</p>
-<dl style={{margin:"12px 0 0",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,200px),1fr))",gap:"24px 40px",padding:"28px 0",borderTop:"1px solid var(--border)",borderBottom:"1px solid var(--border)"}}><div style={{display:"flex",flexDirection:"column",gap:"6px"}}><dt style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--text-muted)"}}>Role</dt>
+<img src="/assets/covers/patient-journeys.jpg" alt="" style={{display:"block",width:"100%",aspectRatio:"21/9",objectFit:"cover",borderRadius:"var(--radius-md)",background:"var(--surface-strong)"}} /><dl style={{margin:"12px 0 0",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,200px),1fr))",gap:"24px 40px",padding:"28px 0",borderTop:"1px solid var(--border)",borderBottom:"1px solid var(--border)"}}><div style={{display:"flex",flexDirection:"column",gap:"6px"}}><dt style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--text-muted)"}}>Role</dt>
 <dd style={{margin:"0",font:"500 15px/1.5 var(--font-sans)",color:"var(--text-strong)"}}>Product definition, workflow architecture, product design, and prototyping</dd>
 </div>
 <div style={{display:"flex",flexDirection:"column",gap:"6px"}}><dt style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--text-muted)"}}>Company</dt>
@@ -34,7 +35,7 @@ export default function PatientJourneys() {
 </div>
 </dl>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,360px),1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"center",padding:"clamp(24px,4vw,48px)",background:"var(--foreground)",color:"var(--background)",borderRadius:"var(--radius-md)"}}><div style={{display:"flex",flexDirection:"column",gap:"14px"}}><div style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.08em",textTransform:"uppercase",color:"#b9cdb9"}}>The central decision</div>
-<p style={{margin:"0",font:"400 italic clamp(28px,3.2vw,40px)/1.2 var(--serif)",color:"#f6f3eb",textWrap:"balance"}}>Combine visual understanding and detailed configuration in one experience.</p>
+<p style={{margin:"0",font:"500 clamp(28px,3.2vw,40px)/1.2 var(--serif)",color:"#f6f3eb",textWrap:"balance"}}>Combine visual understanding and detailed configuration in one experience.</p>
 <p style={{margin:"0",font:"400 15px/1.6 var(--font-sans)",color:"#dfe6d6"}}>Instead of choosing between the two proposed builders, I merged their strengths, then controlled when deeper settings appeared.</p>
 </div>
 <div style={{display:"grid",gridTemplateColumns:"minmax(0,1fr) auto minmax(0,1fr)",gap:"12px",alignItems:"center"}}><div style={{display:"flex",flexDirection:"column",gap:"8px"}}><div style={{padding:"14px",border:"1px dashed #6f8b77",borderRadius:"var(--radius-sm)",font:"500 14px/1.3 var(--font-sans)",color:"#dfe6d6"}}>Dropdown builder</div>
@@ -61,7 +62,7 @@ export default function PatientJourneys() {
 </div>
 </section>
 </>}>
-<section id="s1" aria-labelledby="h1s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"56px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>01</div>
+<section id="s1" aria-labelledby="h1s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"56px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>01</div>
 <h2 id="h1s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>The workflow continued beyond a single automation</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Migranium already had an automation module for discrete trigger–condition–action rules.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Patient Journeys addressed a broader need. A patient might enter a clinic, complete tests, attend an appointment, fill out forms, and wait for a doctor to review the results. The doctor’s decision could then determine the treatment, further appointments, or the next set of requirements.</p>
@@ -88,7 +89,7 @@ export default function PatientJourneys() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Two prospective clients had requirements in this area, giving us a clear reason to develop the feature.</p>
 </section>
 
-<section id="s2" aria-labelledby="h2s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>02</div>
+<section id="s2" aria-labelledby="h2s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>02</div>
 <h2 id="h2s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Starting with a proposed solution</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I took ownership of Patient Journeys after returning from leave.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The CEO had supplied an initial mockup that proposed two ways to build a journey: a dropdown-based builder and a separate node-based builder.</p>
@@ -96,7 +97,7 @@ export default function PatientJourneys() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>As I researched the approach and examined how the interactions would work, I identified limitations in both proposed builders.</p>
 </section>
 
-<section id="s3" aria-labelledby="h3s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>03</div>
+<section id="s3" aria-labelledby="h3s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>03</div>
 <h2 id="h3s" style={{margin:"0 0 6px",font:"600 clamp(30px,3.6vw,42px)/1.15 var(--font-sans)",letterSpacing:"-0.025em",color:"var(--text-strong)",textWrap:"balance"}}>Why I combined the builders</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>A dropdown-only builder would make the relationships within a complex journey difficult to follow. Users could configure individual settings, but understanding how those settings formed a branching workflow would become cumbersome.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>A node-based builder made those relationships visible. However, a canvas alone did not solve the configuration problem: each node could still require detailed settings, assignments, and outcomes.</p>
@@ -150,11 +151,11 @@ export default function PatientJourneys() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I proposed combining the strengths of both approaches into one experience.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The visual builder would show the journey’s structure and connections. Configuration controls, including dropdowns, would allow users to define the details associated with each node.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>This gave users a way to understand the workflow and configure it within the same builder.</p>
-<blockquote style={{margin:"28px 0 8px",padding:"28px 0 0",borderTop:"1px solid var(--border)"}}><p style={{margin:"0",font:"400 italic clamp(26px,3vw,36px)/1.25 var(--serif)",color:"var(--text-strong)",textWrap:"balance"}}>“The key decision was to combine visual understanding and detailed configuration in one experience.”</p>
+<blockquote style={{margin:"28px 0 8px",padding:"28px 0 0",borderTop:"1px solid var(--border)"}}><p style={{margin:"0",font:"500 clamp(26px,3vw,36px)/1.25 var(--serif)",color:"var(--text-strong)",textWrap:"balance"}}>“The key decision was to combine visual understanding and detailed configuration in one experience.”</p>
 </blockquote>
 </section>
 
-<section id="s4" aria-labelledby="h4s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>04</div>
+<section id="s4" aria-labelledby="h4s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>04</div>
 <h2 id="h4s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Keeping complexity available without exposing it all at once</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Combining the builders still left a large number of possible settings.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I separated the configuration needed for a straightforward journey from the controls needed for more complex cases.</p>
@@ -180,7 +181,7 @@ export default function PatientJourneys() {
 <span style={{color:"var(--text-strong)",fontWeight:"500"}}>Defaults</span>
 </div>
 </div>
-<button type="button" onClick={toggleAdv} aria-expanded={advExpanded} style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"space-between",gap:"12px",padding:"14px 18px",border:"0",borderTop:"1px solid var(--border-soft)",background:"transparent",cursor:"pointer",font:"600 14px/1.3 var(--font-sans)",color:"var(--text-strong)"}}><span>Advanced settings</span>
+<button type="button" onClick={toggleAdv} aria-expanded={advExpanded} style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"space-between",gap:"12px",padding:"14px 18px",border:"0",borderTop:"1px solid var(--border-soft)",background:"transparent",cursor:"pointer",font:"600 14px/1.3 var(--font-sans)",color:"var(--text-strong)"}} className="h3"><span>Advanced settings</span>
 <Icon name={advIcon} size={16} /></button>
 {adv && (<><div style={{padding:"4px 18px 18px",display:"flex",flexDirection:"column",gap:"10px",background:"var(--surface-soft)"}}><div style={{paddingTop:"12px",display:"flex",justifyContent:"space-between",gap:"12px",font:"400 14px/1.4 var(--font-sans)"}}><span style={{color:"var(--text-muted)"}}>Timing</span>
 <span style={{color:"var(--text-strong)",fontWeight:"500"}}>Custom</span>
@@ -199,7 +200,7 @@ export default function PatientJourneys() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>This was progressive disclosure applied to the product’s configuration model, rather than simply hiding fields to make the interface look cleaner.</p>
 </section>
 
-<section id="s5" aria-labelledby="h5s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>05</div>
+<section id="s5" aria-labelledby="h5s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>05</div>
 <h2 id="h5s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Defining the underlying product model</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>A journey template defines a reusable workflow: its enrollment triggers, steps, requirements, assignments, timing, connections, and outcomes.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>When a patient is enrolled, they receive an individual journey instance. That instance maintains its own progress, state, version, and history.</p>
@@ -227,7 +228,7 @@ export default function PatientJourneys() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Patient Journeys coordinates the path and monitors the relevant completion events.</p>
 </section>
 
-<section id="s6" aria-labelledby="h6s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>06</div>
+<section id="s6" aria-labelledby="h6s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>06</div>
 <h2 id="h6s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Defining behavior beyond the builder</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The handoff covered more than journey creation. It specified how a journey should be validated, activated, monitored, and changed.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>In the builder, configuration and visual connections should stay synchronized. Changing a destination should update the connection, and changing the connection should update the destination.</p>
@@ -258,7 +259,7 @@ export default function PatientJourneys() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>These are defined requirements handed to engineering, rather than claims about a live implementation.</p>
 </section>
 
-<section id="s7" aria-labelledby="h7s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>07</div>
+<section id="s7" aria-labelledby="h7s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>07</div>
 <h2 id="h7s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Two operational views of the same journey</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>For monitoring patients, the product includes two Progress Board views: Kanban and Relay.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Kanban supports detailed operational work. Patients appear as cards within the step they have reached, making it easier to inspect requirements, ownership, and outstanding work.</p>
@@ -308,7 +309,7 @@ export default function PatientJourneys() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The views serve different tasks, but the underlying patient set, filters, counts, and status rules should remain consistent.</p>
 </section>
 
-<section id="s8" aria-labelledby="h8s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>08</div>
+<section id="s8" aria-labelledby="h8s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>08</div>
 <h2 id="h8s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Making the concept tangible for a prospective client</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>A prospective client wanted to see the feature rather than hear only a description of what we planned to build.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I created a full interactive prototype and personally demonstrated the experience.</p>
@@ -316,7 +317,7 @@ export default function PatientJourneys() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>This was a meaningful validation point for the concept. It demonstrated support for the experience without establishing a signed contract or production rollout.</p>
 </section>
 
-<section id="s9" aria-labelledby="h9s" style={{scrollMarginTop:"96px",marginTop:"72px",padding:"clamp(24px,4vw,44px)",background:"var(--surface-soft)",borderRadius:"var(--radius-md)",display:"flex",flexDirection:"column",gap:"18px"}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"12px",flexWrap:"wrap"}}><span style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>09</span>
+<section id="s9" aria-labelledby="h9s" style={{scrollMarginTop:"96px",marginTop:"72px",padding:"clamp(24px,4vw,44px)",background:"var(--surface-soft)",borderRadius:"var(--radius-md)",display:"flex",flexDirection:"column",gap:"18px"}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"12px",flexWrap:"wrap"}}><span style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>09</span>
 <Badge variant="dark">Handed over to engineering</Badge>
 </div>
 <h2 id="h9s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)"}}>Outcome</h2>
@@ -340,9 +341,9 @@ export default function PatientJourneys() {
 </div>
 </section>
 
-<section id="s10" aria-labelledby="h10s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>10</div>
+<section id="s10" aria-labelledby="h10s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>10</div>
 <h2 id="h10s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)"}}>Reflection</h2>
-<p style={{margin:"0",font:"400 italic clamp(24px,2.6vw,30px)/1.3 var(--serif)",color:"var(--text-strong)",textWrap:"pretty"}}>The central challenge was making a complex workflow understandable without removing the flexibility it needed.</p>
+<p style={{margin:"0",font:"500 clamp(24px,2.6vw,30px)/1.3 var(--serif)",color:"var(--text-strong)",textWrap:"pretty"}}>The central challenge was making a complex workflow understandable without removing the flexibility it needed.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Working through the proposed builders showed me that the right interaction model did not need to follow the original separation between dropdown configuration and visual nodes.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>Combining them, then controlling when deeper settings appeared, gave the product a clearer direction. The client demonstration helped communicate that direction in a form the prospect could experience.</p>
 </section>

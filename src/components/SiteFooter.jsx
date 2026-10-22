@@ -10,7 +10,7 @@ export default function SiteFooter({ current = 'home' }) {
       {others.length > 0 && (
         <section aria-labelledby="more-work" className="container more-work">
           <div className="more-work__head">
-            <h2 id="more-work" className="h-section">More <em className="serif">work</em></h2>
+            <h2 id="more-work" className="h-section">More <span className="accent">work</span></h2>
             <Link to="/#work" className="text-link"><Icon name="arrow-left" size={16} />Back to selected work</Link>
           </div>
           <div className="more-work__grid">
@@ -25,13 +25,23 @@ export default function SiteFooter({ current = 'home' }) {
           </div>
         </section>
       )}
-      <div className="site-footer__bar">
+      <div className="site-footer">
         <div className="container site-footer__inner">
-          <span>© {new Date().getFullYear()} Kolom Oden-Ikpi · Lagos, Nigeria</span>
-          <div className="site-footer__links">
-            <a href="mailto:kolomodenikpi@gmail.com">kolomodenikpi@gmail.com</a>
-            <a href="https://www.linkedin.com/in/kolom-oden-ikpi-02516b32a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <div className="site-footer__top">
+            <div className="site-footer__col">
+              <Link to="/" className="wordmark" aria-label="Kolom Oden-Ikpi, home"><span>Kolom</span><span>Oden-Ikpi.</span></Link>
+              <nav aria-label="Footer" className="site-footer__nav">
+                <Link to="/#about">About</Link>
+                <Link to="/#work">My work</Link>
+                <Link to="/#contact">Contact</Link>
+              </nav>
+            </div>
+            <div className="site-footer__links">
+              <a href="mailto:kolomodenikpi@gmail.com">kolomodenikpi@gmail.com</a>
+              <a href="https://www.linkedin.com/in/kolom-oden-ikpi-02516b32a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
           </div>
+          <div className="site-footer__copy">© {new Date().getFullYear()} Kolom Oden-Ikpi · Lagos, Nigeria</div>
         </div>
       </div>
     </footer>

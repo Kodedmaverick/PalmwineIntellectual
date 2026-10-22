@@ -9,6 +9,7 @@ import './styles/tokens/effects.css';
 import './styles/tokens/base.css';
 import './styles/components.css';
 import './styles/site.css';
+import './styles/hover.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

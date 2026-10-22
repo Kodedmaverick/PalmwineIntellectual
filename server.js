@@ -70,7 +70,9 @@ const server = http.createServer(async (req, res) => {
     if (file.startsWith(DIST + path.sep)) {
       const s = await stat(file).catch(() => null);
       if (s?.isFile()) {
-        const immutable = rel.startsWith('/assets/');
+        // Vite's built files have a content hash in the name (e.g. index-a1B2c3D4.js) and can be cached forever.
+        // Images from public/ keep their names, so they get a shorter cache in case you replace them.
+        const immutable = rel.startsWith('/assets/') && /-[A-Za-z0-9_-]{8}\.(js|css)$/.test(rel);
         return await sendFile(res, file, immutable ? 'public, max-age=31536000, immutable' : 'public, max-age=3600');
       }
     }

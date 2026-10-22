@@ -4,6 +4,8 @@ import Home from './pages/Home.jsx';
 import Documents from './pages/Documents.jsx';
 import PatientJourneys from './pages/PatientJourneys.jsx';
 import RFA from './pages/RFA.jsx';
+import Kompound from './pages/Kompound.jsx';
+import Titaaria from './pages/Titaaria.jsx';
 import SiteHeader from './components/SiteHeader.jsx';
 import SiteFooter from './components/SiteFooter.jsx';
 
@@ -43,6 +45,8 @@ export default function App() {
         <Route path="/work/documents" element={<Documents />} />
         <Route path="/work/patient-journeys" element={<PatientJourneys />} />
         <Route path="/work/rfa-capital-advisors" element={<RFA />} />
+        <Route path="/work/kompound" element={<Kompound />} />
+        <Route path="/work/titaaria" element={<Titaaria />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

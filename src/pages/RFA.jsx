@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, Badge } from '../components/ds.jsx';
 import CaseLayout from '../components/CaseLayout.jsx';
@@ -9,12 +9,13 @@ const TOC = [{"id":"s1","label":"Beyond the website"},{"id":"s2","label":"My own
 export default function RFA() {
   useDocumentMeta("RFA Capital Advisors — Kolom Oden-Ikpi", "Case study: leading a two-month contract engagement for RFA Capital Advisors across a corporate website, client portal, mobile app, and CMS.");
   return (
-<CaseLayout current="rfa" toc={TOC} hero={<><section aria-labelledby="cs-title" style={{maxWidth:"1200px",margin:"0 auto",padding:"40px clamp(20px,4vw,48px) 56px",display:"flex",flexDirection:"column",gap:"28px"}}><Link to="/#work" style={{alignSelf:"flex-start",display:"inline-flex",alignItems:"center",gap:"8px",font:"500 14px/1.3 var(--font-sans)",color:"var(--text-muted)",textDecoration:"none",padding:"6px 0"}}><Icon name="arrow-left" size={16} />Selected work</Link>
-<div style={{font:"600 13px/1.3 var(--font-sans)",letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--primary)",paddingTop:"24px"}}>RFA Capital Advisors / Digital transformation</div>
-<h1 id="cs-title" style={{margin:"0",maxWidth:"980px",font:"600 clamp(40px,6.2vw,76px)/1.03 var(--font-sans)",letterSpacing:"-0.04em",color:"var(--text-strong)",textWrap:"balance"}}>Four connected platforms, <span style={{fontFamily:"var(--serif)",fontStyle:"italic",fontWeight:"400",letterSpacing:"-0.01em"}}>delivered in two months</span>
+<CaseLayout current="rfa" toc={TOC} hero={<><section aria-labelledby="cs-title" style={{maxWidth:"1200px",margin:"0 auto",padding:"40px clamp(20px,4vw,48px) 56px",display:"flex",flexDirection:"column",gap:"28px"}}><Link to="/#work" style={{alignSelf:"flex-start",display:"inline-flex",alignItems:"center",gap:"8px",font:"500 14px/1.3 var(--font-sans)",color:"var(--text-muted)",textDecoration:"none",padding:"6px 0"}} className="h4"><Icon name="arrow-left" size={16} />Selected work</Link>
+<div style={{display:"flex",alignItems:"center",gap:"14px",paddingTop:"24px"}}><img src="/assets/logos/rfa.png" alt="RFA Capital Advisors" style={{height:"44px",width:"44px",objectFit:"contain",mixBlendMode:"multiply"}} /><span style={{font:"600 13px/1.3 var(--font-sans)",letterSpacing:"0.08em",textTransform:"uppercase",color:"var(--primary)"}}>RFA Capital Advisors / Digital transformation</span>
+</div>
+<h1 id="cs-title" style={{margin:"0",maxWidth:"980px",font:"600 clamp(40px,6.2vw,76px)/1.03 var(--font-sans)",letterSpacing:"-0.04em",color:"var(--text-strong)",textWrap:"balance"}}>Four connected platforms, <span style={{color:"var(--primary)",letterSpacing:"-0.01em"}}>delivered in two months</span>
 </h1>
 <p style={{margin:"0",maxWidth:"760px",font:"400 clamp(18px,1.8vw,21px)/1.6 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I led a contract engagement to refresh RFA Capital Advisors’ website and introduce a client portal, mobile application, and content management system. The team delivered within the planned two-month timeline, completed handoff, and launched an ecosystem that has required little ongoing maintenance.</p>
-<dl style={{margin:"12px 0 0",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,200px),1fr))",gap:"24px 40px",padding:"28px 0",borderTop:"1px solid var(--border)",borderBottom:"1px solid var(--border)"}}><div style={{display:"flex",flexDirection:"column",gap:"6px"}}><dt style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--text-muted)"}}>Role</dt>
+<img src="/assets/covers/rfa.jpg" alt="" style={{display:"block",width:"100%",aspectRatio:"21/9",objectFit:"cover",borderRadius:"var(--radius-md)",background:"var(--surface-strong)"}} /><dl style={{margin:"12px 0 0",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,200px),1fr))",gap:"24px 40px",padding:"28px 0",borderTop:"1px solid var(--border)",borderBottom:"1px solid var(--border)"}}><div style={{display:"flex",flexDirection:"column",gap:"6px"}}><dt style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--text-muted)"}}>Role</dt>
 <dd style={{margin:"0",font:"500 15px/1.5 var(--font-sans)",color:"var(--text-strong)"}}>Contract Product Lead & Website Designer</dd>
 </div>
 <div style={{display:"flex",flexDirection:"column",gap:"6px"}}><dt style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--text-muted)"}}>Company</dt>
@@ -35,10 +36,10 @@ export default function RFA() {
 </div>
 </dl>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,360px),1fr))",gap:"clamp(24px,4vw,56px)",alignItems:"center",padding:"clamp(24px,4vw,48px)",background:"var(--foreground)",color:"var(--background)",borderRadius:"var(--radius-md)"}}><div style={{display:"flex",flexDirection:"column",gap:"14px"}}><div style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.08em",textTransform:"uppercase",color:"#b9cdb9"}}>The central decision</div>
-<p style={{margin:"0",font:"400 italic clamp(28px,3.2vw,40px)/1.2 var(--serif)",color:"#f6f3eb",textWrap:"balance"}}>Use an existing CMS, and spend the fixed delivery window on the parts that needed to be built.</p>
+<p style={{margin:"0",font:"500 clamp(28px,3.2vw,40px)/1.2 var(--serif)",color:"#f6f3eb",textWrap:"balance"}}>Use an existing CMS, and spend the fixed delivery window on the parts that needed to be built.</p>
 </div>
 <div style={{display:"flex",alignItems:"baseline",gap:"16px",flexWrap:"wrap"}}><span style={{font:"600 clamp(88px,12vw,148px)/0.9 var(--font-sans)",letterSpacing:"-0.05em",color:"#f6f3eb"}}>2</span>
-<div style={{display:"flex",flexDirection:"column",gap:"6px"}}><span style={{font:"400 italic clamp(28px,3vw,40px)/1 var(--serif)",color:"#dfe6d6"}}>months</span>
+<div style={{display:"flex",flexDirection:"column",gap:"6px"}}><span style={{font:"500 clamp(28px,3vw,40px)/1 var(--serif)",color:"#dfe6d6"}}>months</span>
 <span style={{font:"400 15px/1.45 var(--font-sans)",color:"#c9d6c8"}}>Delivered within the agreed window, across four platforms</span>
 </div>
 </div>
@@ -58,7 +59,7 @@ export default function RFA() {
 </div>
 </section>
 </>}>
-<section id="s1" aria-labelledby="h1s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"56px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>01</div>
+<section id="s1" aria-labelledby="h1s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"56px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>01</div>
 <h2 id="h1s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Expanding beyond the corporate website</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>RFA Capital Advisors wanted to revamp its website and add capabilities it did not yet have.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The scope included a mobile application through which clients could monitor their investments, a corresponding web client portal, and a CMS that staff could use to manage and publish website content.</p>
@@ -66,7 +67,7 @@ export default function RFA() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I took on the engagement as contract Product Lead alongside my main role at Migranium.</p>
 </section>
 
-<section id="s2" aria-labelledby="h2s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>02</div>
+<section id="s2" aria-labelledby="h2s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>02</div>
 <h2 id="h2s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>My ownership</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I led product direction and delivery and designed the website.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I coordinated a team comprising a product manager, a frontend engineer, a full-stack engineer, and a backend engineer.</p>
@@ -89,20 +90,20 @@ export default function RFA() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The agreed delivery window was two months.</p>
 </section>
 
-<section id="s3" aria-labelledby="h3s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>03</div>
+<section id="s3" aria-labelledby="h3s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>03</div>
 <h2 id="h3s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Starting with the website</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>We began with the website design.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I developed the experience and worked through a few iterations with the client. The design was approved quickly, giving the team an agreed direction for implementation.</p>
-<figure style={{margin:"14px 0",display:"flex",flexDirection:"column",gap:"10px"}}><ol style={{margin:"0",padding:"0",listStyle:"none",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,150px),1fr))",gap:"8px"}}><li style={{padding:"16px",border:"1px solid var(--border)",borderRadius:"var(--radius-sm)",background:"var(--surface-card)",display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"400 italic 18px/1 var(--serif)",color:"var(--primary)"}}>1</span>
+<figure style={{margin:"14px 0",display:"flex",flexDirection:"column",gap:"10px"}}><ol style={{margin:"0",padding:"0",listStyle:"none",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,150px),1fr))",gap:"8px"}}><li style={{padding:"16px",border:"1px solid var(--border)",borderRadius:"var(--radius-sm)",background:"var(--surface-card)",display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"500 18px/1 var(--serif)",color:"var(--primary)"}}>1</span>
 <span style={{font:"600 15px/1.3 var(--font-sans)",color:"var(--text-strong)"}}>Website design</span>
 </li>
-<li style={{padding:"16px",border:"1px solid var(--border)",borderRadius:"var(--radius-sm)",background:"var(--surface-card)",display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"400 italic 18px/1 var(--serif)",color:"var(--primary)"}}>2</span>
+<li style={{padding:"16px",border:"1px solid var(--border)",borderRadius:"var(--radius-sm)",background:"var(--surface-card)",display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"500 18px/1 var(--serif)",color:"var(--primary)"}}>2</span>
 <span style={{font:"600 15px/1.3 var(--font-sans)",color:"var(--text-strong)"}}>Client iterations and approval</span>
 </li>
-<li style={{padding:"16px",border:"1px solid var(--border)",borderRadius:"var(--radius-sm)",background:"var(--surface-card)",display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"400 italic 18px/1 var(--serif)",color:"var(--primary)"}}>3</span>
+<li style={{padding:"16px",border:"1px solid var(--border)",borderRadius:"var(--radius-sm)",background:"var(--surface-card)",display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"500 18px/1 var(--serif)",color:"var(--primary)"}}>3</span>
 <span style={{font:"600 15px/1.3 var(--font-sans)",color:"var(--text-strong)"}}>Website, CMS, portal, and app</span>
 </li>
-<li style={{padding:"16px",background:"var(--foreground)",color:"var(--background)",borderRadius:"var(--radius-sm)",display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"400 italic 18px/1 var(--serif)",color:"#b9cdb9"}}>4</span>
+<li style={{padding:"16px",background:"var(--foreground)",color:"var(--background)",borderRadius:"var(--radius-sm)",display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"500 18px/1 var(--serif)",color:"#b9cdb9"}}>4</span>
 <span style={{font:"600 15px/1.3 var(--font-sans)"}}>Handoff and launch</span>
 </li>
 </ol>
@@ -112,7 +113,7 @@ export default function RFA() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The website, portal, mobile app, and CMS were distinct parts of the scope, but they needed to be managed as one engagement.</p>
 </section>
 
-<section id="s4" aria-labelledby="h4s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>04</div>
+<section id="s4" aria-labelledby="h4s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>04</div>
 <h2 id="h4s" style={{margin:"0 0 6px",font:"600 clamp(30px,3.6vw,42px)/1.15 var(--font-sans)",letterSpacing:"-0.025em",color:"var(--text-strong)",textWrap:"balance"}}>Choosing an existing CMS</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>One decision was to use an existing CMS rather than design and build a bespoke content-management interface.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The client needed a way to manage and publish content. Building a custom interface for that requirement would have added design and implementation work within a fixed delivery window.</p>
@@ -127,11 +128,11 @@ export default function RFA() {
 </div>
 </figure>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I directed engineering to use an existing solution, allowing us to meet the publishing requirement while reserving effort for the other parts of the engagement.</p>
-<blockquote style={{margin:"28px 0 8px",padding:"28px 0 0",borderTop:"1px solid var(--border)"}}><p style={{margin:"0",font:"400 italic clamp(26px,3vw,36px)/1.25 var(--serif)",color:"var(--text-strong)",textWrap:"balance"}}>“The publishing requirement did not need a bespoke interface to be useful to the client.”</p>
+<blockquote style={{margin:"28px 0 8px",padding:"28px 0 0",borderTop:"1px solid var(--border)"}}><p style={{margin:"0",font:"500 clamp(26px,3vw,36px)/1.25 var(--serif)",color:"var(--text-strong)",textWrap:"balance"}}>“The publishing requirement did not need a bespoke interface to be useful to the client.”</p>
 </blockquote>
 </section>
 
-<section id="s5" aria-labelledby="h5s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>05</div>
+<section id="s5" aria-labelledby="h5s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>05</div>
 <h2 id="h5s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>Organizing delivery across the team</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>I worked with the frontend and full-stack engineers on the website and CMS.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The backend engineer used AI-assisted development on the client portal and mobile-app work.</p>
@@ -139,7 +140,7 @@ export default function RFA() {
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The work distribution allowed the team to progress across the different platforms within the same engagement, while client reviews kept the direction aligned.</p>
 </section>
 
-<section id="s6" aria-labelledby="h6s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>06</div>
+<section id="s6" aria-labelledby="h6s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>06</div>
 <h2 id="h6s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)",textWrap:"balance"}}>The connected ecosystem</h2>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The four surfaces served complementary purposes.</p>
 <figure style={{margin:"8px 0",padding:"clamp(20px,3vw,32px)",background:"var(--surface-soft)",borderRadius:"var(--radius-md)",display:"flex",flexDirection:"column",gap:"16px"}}><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,280px),1fr))",gap:"16px"}}><div style={{display:"flex",flexDirection:"column",gap:"8px"}}><span style={{font:"600 12px/1.3 var(--font-sans)",letterSpacing:"0.06em",textTransform:"uppercase",color:"var(--text-muted)"}}>Public presence & publishing</span>
@@ -169,7 +170,7 @@ export default function RFA() {
 </figure>
 </section>
 
-<section id="s7" aria-labelledby="h7s" style={{scrollMarginTop:"96px",marginTop:"72px",padding:"clamp(24px,4vw,44px)",background:"var(--surface-soft)",borderRadius:"var(--radius-md)",display:"flex",flexDirection:"column",gap:"18px"}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"12px",flexWrap:"wrap"}}><span style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>07</span>
+<section id="s7" aria-labelledby="h7s" style={{scrollMarginTop:"96px",marginTop:"72px",padding:"clamp(24px,4vw,44px)",background:"var(--surface-soft)",borderRadius:"var(--radius-md)",display:"flex",flexDirection:"column",gap:"18px"}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"12px",flexWrap:"wrap"}}><span style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>07</span>
 <Badge variant="dark">Live</Badge>
 </div>
 <h2 id="h7s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)"}}>Outcome</h2>
@@ -183,9 +184,9 @@ export default function RFA() {
 </ul>
 </section>
 
-<section id="s8" aria-labelledby="h8s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"400 italic 22px/1 var(--serif)",color:"var(--primary)"}}>08</div>
+<section id="s8" aria-labelledby="h8s" style={{scrollMarginTop:"96px",display:"flex",flexDirection:"column",gap:"18px",paddingTop:"72px"}}><div style={{font:"500 22px/1 var(--serif)",color:"var(--primary)"}}>08</div>
 <h2 id="h8s" style={{margin:"0 0 6px",font:"600 clamp(26px,3vw,34px)/1.2 var(--font-sans)",letterSpacing:"-0.02em",color:"var(--text-strong)"}}>Reflection</h2>
-<p style={{margin:"0",font:"400 italic clamp(24px,2.6vw,30px)/1.3 var(--serif)",color:"var(--text-strong)",textWrap:"pretty"}}>This engagement required product leadership across several connected delivery areas, alongside hands-on website design.</p>
+<p style={{margin:"0",font:"500 clamp(24px,2.6vw,30px)/1.3 var(--serif)",color:"var(--text-strong)",textWrap:"pretty"}}>This engagement required product leadership across several connected delivery areas, alongside hands-on website design.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The existing-CMS decision helped keep the publishing scope proportionate to the problem. Focused website iterations established an approved direction, while distributing work across the engineering team supported delivery within the agreed window.</p>
 <p style={{margin:"0",font:"400 17px/1.7 var(--font-sans)",color:"var(--text-body)",textWrap:"pretty"}}>The result was a completed engagement that expanded the client’s digital capabilities beyond its website.</p>
 </section>

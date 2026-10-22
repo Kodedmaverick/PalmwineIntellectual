@@ -61,10 +61,11 @@ export default function ContactSection() {
   const contactErr = errors.contact;
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="container contact">
+    <section id="contact" aria-labelledby="contact-title" className="contact-band">
+    <div className="container contact">
       <div className="contact__intro">
         <div className="eyebrow">Contact</div>
-        <h2 id="contact-title" className="contact__title">Have a complex product to <em className="serif accent">untangle?</em></h2>
+        <h2 id="contact-title" className="contact__title">Have a complex product to <span className="accent">untangle?</span></h2>
         <p className="contact__lede">Send a message and I’ll reply by email or phone — whichever you leave. You can also reach me directly.</p>
         <div className="contact__direct">
           <a href="mailto:kolomodenikpi@gmail.com" className="text-link"><Icon name="mail" size={18} />kolomodenikpi@gmail.com</a>
@@ -133,6 +134,7 @@ export default function ContactSection() {
           </form>
         )}
       </div>
+    </div>
     </section>
   );
 }
