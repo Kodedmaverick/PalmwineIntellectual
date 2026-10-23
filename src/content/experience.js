@@ -1,5 +1,5 @@
 export const EXPERIENCE = [
-    { company: 'Migranium', url: 'https://migranium.com', kind: 'Main role', logo: '/assets/logos/migranium-icon.png', role: 'Lead Product Manager & Product Designer', place: 'Toronto, Canada', dates: 'Aug 2025 – Present', points: [
+    { company: 'Migranium', url: 'https://migranium.com', kind: 'Main role', logo: '/assets/logos/migranium-icon.png', role: 'Product Manager', place: 'Toronto, Canada', dates: 'Aug 2025 – Present', points: [
       'Own end-to-end product strategy, roadmap, and delivery for an AI-powered healthcare SaaS platform spanning 14+ integrated modules.',
       'Lead a cross-functional team of 5 engineers and 1 designer, from discovery and backlog prioritization through sprint planning and launch.',
       'Defined and launched a centralized task management system that consolidated five fragmented workflows into one operational platform.',
