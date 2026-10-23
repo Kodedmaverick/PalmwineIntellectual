@@ -7,7 +7,7 @@ export const EXPERIENCE = [
       'Led design and delivery of an integrations framework connecting EMR systems, cloud storage, telephony, email, and fax.',
       'Introduced feature-gating for phased rollouts and set documentation and handoff standards that reduced implementation ambiguity.'
     ] },
-    { company: 'Kompound', url: 'https://kompond.com', kind: 'Contract', initial: 'K', role: 'Contract Product Manager & Product Designer', points: [
+    { company: 'Kompound', url: 'https://kompond.com', kind: 'Contract', initial: 'K', role: 'Contract Product Manager', points: [
       'Led product planning and end-to-end interactive prototyping for an estate-management platform, expanding the initial access-control brief into a product designed to serve multiple estates. The product is live in its initial estate.'
     ] },
     { company: 'RFA Capital Advisors', url: 'https://rfacapitaladvisors.com', kind: 'Contract', logo: '/assets/logos/rfa.png', role: 'Product Lead, Digital Transformation', place: 'Lagos, Nigeria', dates: '2026', points: [
