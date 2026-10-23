@@ -15,7 +15,7 @@ export const EXPERIENCE = [
       'Led discovery workshops and user research, translating findings into requirements, roadmap direction, and design decisions.',
       'Directed a 5-person cross-functional team through discovery, design, delivery, and acceptance testing, within the agreed two months.'
     ] },
-    { company: 'Titaaria', url: 'https://titaar.com', kind: 'Project · Ongoing', initial: 'T', role: 'Product Management & Product Design', points: [
+    { company: 'Titaaria', url: 'https://titaar.com', kind: 'Project · Ongoing', initial: 'T', role: 'Product Manager', points: [
       'Translated a substantial social-commerce PRD into user journeys, a design system, design requirements, and an interactive proof of concept to support stakeholder evaluation and funding discussions.'
     ] },
     { company: 'Trail by Garden Ventures', url: 'https://gardenventures.org/', kind: 'Contract', logo: '/assets/logos/gv.png', role: 'Product Designer', place: 'Lagos, Nigeria', dates: 'May – Jul 2025', points: [
